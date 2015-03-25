@@ -29,10 +29,14 @@ double gamecheck::getTax(){
 }
 
 double gamecheck::getDiscount(int timesclicked){
-    if(timesclicked<2){
+    if(timesclicked<4){
         return 0;
     }else{
         return 0.2;
     }
     return 0;
+}
+
+double gamecheck::getBalance(){
+    return balance;
 }

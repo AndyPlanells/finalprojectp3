@@ -33,3 +33,7 @@ double balancecheck::getDiscount(int timesclicked){
         return 0.15;
     }
 }
+
+int balancecheck::getMoney()const{
+    return money;
+}

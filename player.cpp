@@ -11,8 +11,8 @@
 using std::string;
 using std::stringstream;
 
-player::player(string name,string lastname,string username,string password,string email,int VisaCard,int VisaCode,double balance,wow mywow,d3 myd3,sc2 mysc2, Hs myhs)
-    :name(name),lastname(lastname),username(username),password(password),email(email),VisaCard(VisaCard),VisaCode(VisaCode),balance(balance),mywow(mywow),myd3(myd3),mysc2(mysc2),myhs(myhs){
+player::player(string name,string lastname,string username,string password,string email,int VisaCard,int VisaCode,double balance,wow mywow,d3 myd3,sc2 mysc2, Hs myhs,int timesgames, int timesbalance)
+    :name(name),lastname(lastname),username(username),password(password),email(email),VisaCard(VisaCard),VisaCode(VisaCode),balance(balance),mywow(mywow),myd3(myd3),mysc2(mysc2),myhs(myhs),timesgames(timesgames),timesbalance(timesbalance){
 }
 
 string player::toString()const{

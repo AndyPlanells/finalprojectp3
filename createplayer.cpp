@@ -43,7 +43,7 @@ void createplayer::on_pushButton_clicked()
     d3 myd3;
     sc2 mysc2;
     Hs myhs;
-    players->push_back(player(name,lastname,username,password,email,VisaCard,VisaCode,balance,mywow,myd3,mysc2,myhs));
+    players->push_back(player(name,lastname,username,password,email,VisaCard,VisaCode,balance,mywow,myd3,mysc2,myhs,0,0));
     this->hide();
 }
 

@@ -13,6 +13,7 @@ public:
     virtual string toString()const;
     virtual double getTax();
     virtual double getDiscount(int);
+    double getBalance();
 };
 
 #endif // GAMECHECK_H

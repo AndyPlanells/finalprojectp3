@@ -34,7 +34,7 @@ class player
     vector<balancecheck> mybchecks;
     vector<gamecheck> mygchecks;
 public:
-    player(string="",string="",string="",string="",string="",int=0,int=0, double=0,wow=NULL,d3=NULL,sc2=NULL,Hs=NULL);
+    player(string="",string="",string="",string="",string="",int=0,int=0, double=0,wow=NULL,d3=NULL,sc2=NULL,Hs=NULL,int=0,int=0);
     string toString()const;
     string getName()const;
     void setName(string);

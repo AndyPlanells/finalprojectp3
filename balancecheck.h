@@ -14,6 +14,7 @@ public:
     virtual string toString()const;
     virtual double getTax();
     virtual double getDiscount(int);
+    int getMoney()const;
 };
 
 #endif // BALANCECHECK_H
