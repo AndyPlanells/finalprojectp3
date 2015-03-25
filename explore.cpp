@@ -25,7 +25,6 @@ void explore::on_pushButton_clicked()
 
     QTextStream in(&file);
 
-    //podes agregar el .txt al los resources y en vez the "./about.txt" en el url le pones ":/about.txt"
 
     ui->wow_text->setText(in.readAll());
 

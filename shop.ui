@@ -577,19 +577,6 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;Battle.net Balance&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QSpinBox" name="spin_balance">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>210</y>
-       <width>211</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="maximum">
-      <number>1000</number>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="card_label">
      <property name="geometry">
       <rect>
@@ -637,6 +624,16 @@
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Please  enter your Credit Card code below&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="spin_balance">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>210</y>
+       <width>211</width>
+       <height>27</height>
+      </rect>
      </property>
     </widget>
    </widget>
