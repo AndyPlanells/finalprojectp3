@@ -92,6 +92,17 @@ characterwindow::characterwindow(vector<player>* p,QWidget *parent) :
         ui->hs_selectbut->setEnabled(true);
         ui->hs_type->setEnabled(true);
     }
+    if(players->at(0).getMySc2().getIfbought()){
+        ui->pushButton_4->setEnabled(true);
+        ui->sc2_protoss->setEnabled(true);
+        ui->sc2_terran->setEnabled(true);
+        ui->sc2_zerg->setEnabled(true);
+        ui->sc2_unlock->setEnabled(true);
+        ui->sc2_selectbut->setEnabled(true);
+        ui->sc2_story->setEnabled(true);
+        ui->sc2_name->setEnabled(true);
+        ui->sc2_chars->setEnabled(true);
+    }
 }
 
 characterwindow::~characterwindow()
@@ -125,6 +136,7 @@ void characterwindow::on_pushButton_clicked()
     ui->wow_chars->clear();
     for(unsigned i;i<players->at(0).getMywowchars().size();i++){
         ui->wow_chars->addItem(QString(players->at(0).getMywowchars().at(i).getName().c_str()));
+        cout<<players->at(0).getMywowchars().at(i).getName();
     }
 
 }
@@ -174,96 +186,10 @@ void characterwindow::on_wow_selectbut_clicked()
         image.load(":/belf.jpg");
     }else if(ui->wow_race->text()=="Goblin"){
         ui->wow_faction->setText("Horde");
-        image.load(":/goblin.jpg");{
-            ui->hs_name->setText(QString(players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getName().c_str()));
-            ui->hs_type->setText(QString(players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getType().c_str()));
-            int manacost = players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getManacost();
-            QString tochange = QString::number(manacost);
-            ui->hs_manacost->setText(tochange);
-            QImage image;
-            if(ui->hs_type->text()=="Priest"){
-               image.load(":/priest.png");
-            }else if(ui->hs_type->text()=="Warrior"){
-               image.load(":/warrior.png");
-            }else if(ui->hs_type->text()=="Mage"){
-               image.load(":/mage.png");
-            }else if(ui->hs_type->text()=="Druid"){
-               image.load(":/druid.png");
-            }else if(ui->hs_type->text()=="Hunter"){
-               image.load(":/hunter.png");
-            }else if(ui->hs_type->text()=="Shaman"){
-               image.load(":/shaman.png");
-            }else if(ui->hs_type->text()=="Paladin"){
-               image.load(":/paladin.png");
-            }else if(ui->hs_type->text()=="Warlock"){
-               image.load(":/warlock.png");
-            }else{
-               image.load(":/rogue.png");
-            }
-
-            ui->hs_label->setPixmap(QPixmap::fromImage(image));
-        }
-    }
-    {
-        ui->hs_name->setText(QString(players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getName().c_str()));
-        ui->hs_type->setText(QString(players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getType().c_str()));
-        int manacost = players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getManacost();
-        QString tochange = QString::number(manacost);
-        ui->hs_manacost->setText(tochange);
-        QImage image;
-        if(ui->hs_type->text()=="Priest"){
-           image.load(":/priest.png");
-        }else if(ui->hs_type->text()=="Warrior"){
-           image.load(":/warrior.png");
-        }else if(ui->hs_type->text()=="Mage"){
-           image.load(":/mage.png");
-        }else if(ui->hs_type->text()=="Druid"){
-           image.load(":/druid.png");
-        }else if(ui->hs_type->text()=="Hunter"){
-           image.load(":/hunter.png");
-        }else if(ui->hs_type->text()=="Shaman"){
-           image.load(":/shaman.png");
-        }else if(ui->hs_type->text()=="Paladin"){
-           image.load(":/paladin.png");
-        }else if(ui->hs_type->text()=="Warlock"){
-           image.load(":/warlock.png");
-        }else{
-           image.load(":/rogue.png");
-        }
-
-        ui->hs_label->setPixmap(QPixmap::fromImage(image));
-    }
-    ui->race_label->setPixmap(QPixmap::fromImage(image));{
-        ui->hs_name->setText(QString(players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getName().c_str()));
-        ui->hs_type->setText(QString(players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getType().c_str()));
-        int manacost = players->at(0).getMyhschars().at(ui->hs_chars->currentIndex()).getManacost();
-        QString tochange = QString::number(manacost);
-        ui->hs_manacost->setText(tochange);
-        QImage image;
-        if(ui->hs_type->text()=="Priest"){
-           image.load(":/priest.png");
-        }else if(ui->hs_type->text()=="Warrior"){
-           image.load(":/warrior.png");
-        }else if(ui->hs_type->text()=="Mage"){
-           image.load(":/mage.png");
-        }else if(ui->hs_type->text()=="Druid"){
-           image.load(":/druid.png");
-        }else if(ui->hs_type->text()=="Hunter"){
-           image.load(":/hunter.png");
-        }else if(ui->hs_type->text()=="Shaman"){
-           image.load(":/shaman.png");
-        }else if(ui->hs_type->text()=="Paladin"){
-           image.load(":/paladin.png");
-        }else if(ui->hs_type->text()=="Warlock"){
-           image.load(":/warlock.png");
-        }else{
-           image.load(":/rogue.png");
-        }
-
-        ui->hs_label->setPixmap(QPixmap::fromImage(image));
+        image.load(":/goblin.jpg");
     }
 
-
+    ui->race_label->setPixmap(QPixmap::fromImage(image));
 }
 
 void characterwindow::on_d3_createcharbut_clicked()
@@ -371,4 +297,82 @@ void characterwindow::on_pushButton_3_clicked()
     for(unsigned i;i<players->at(0).getMyhschars().size();i++){
         ui->hs_chars->addItem(QString(players->at(0).getMyhschars().at(i).getName().c_str()));
     }
+}
+
+void characterwindow::on_sc2_unlock_clicked()
+{
+    string name;
+    if(ui->sc2_protoss->isChecked()){
+        name = "Protoss";
+        bool ifexist = false;
+        for(unsigned i=0;i<(players->at(0).getMySc2chars().size());i++){
+             if((players->at(0).getMySc2chars().at(i).getName())==name){
+                 ifexist = true;
+                 break;
+             }
+        }
+        if(ifexist){
+            QMessageBox::information(this,"Starcraft II","You have already unlocked this unit.");
+        }else{
+            shochar a("Protoss","Starcraft II","Yada yada");
+            players->at(0).setsc2char(a);
+            QMessageBox::information(this,"Unlock","Succesfully unlocked Protoss unit!");
+        }
+    }else if(ui->sc2_terran->isChecked()){
+        name = "Terran";
+        bool ifexist = false;
+        for(unsigned i=0;i<(players->at(0).getMySc2chars().size());i++){
+             if((players->at(0).getMySc2chars().at(i).getName())==name){
+                 ifexist = true;
+                 break;
+             }
+        }
+        if(ifexist){
+            QMessageBox::information(this,"Starcraft II","You have already unlocked this unit.");
+        }else{
+            shochar a("Terran","Starcraft II","Yada yada");
+            players->at(0).setsc2char(a);
+            QMessageBox::information(this,"Unlock","Succesfully unlocked Terran unit!");
+        }
+    }else if(ui->sc2_zerg->isChecked()){
+        name = "Zerg";
+        bool ifexist = false;
+        for(unsigned i=0;i<(players->at(0).getMySc2chars().size());i++){
+             if((players->at(0).getMySc2chars().at(i).getName())==name){
+                 ifexist = true;
+                 break;
+             }
+        }
+        if(ifexist){
+            QMessageBox::information(this,"Starcraft II","You have already unlocked this unit.");
+        }else{
+            shochar a("Zerg","Starcraft II","Yada yada");
+            players->at(0).setsc2char(a);
+            QMessageBox::information(this,"Unlock","Succesfully unlocked Zerg unit!");
+        }
+    }
+}
+
+void characterwindow::on_pushButton_4_clicked()
+{
+    ui->sc2_chars->clear();
+    for(unsigned i;i<players->at(0).getMySc2chars().size();i++){
+        ui->sc2_chars->addItem(QString(players->at(0).getMySc2chars().at(i).getName().c_str()));
+    }
+}
+
+void characterwindow::on_sc2_selectbut_clicked()
+{
+    ui->sc2_name->setText(QString(players->at(0).getMySc2chars().at(ui->sc2_chars->currentIndex()).getName().c_str()));
+    ui->sc2_story->setText(QString(players->at(0).getMySc2chars().at(ui->sc2_chars->currentIndex()).getStory().c_str()));
+    QImage image;
+    if(ui->sc2_name->text()=="Protoss"){
+        image.load(":/protostwo.jpg");
+    }else if(ui->sc2_name->text()=="Terran"){
+        image.load(":/terrantwo.jpg");
+    }else{
+        image.load(":/zergtwo.jpg");
+    }
+
+    ui->sc2_label->setPixmap(QPixmap::fromImage(image));
 }

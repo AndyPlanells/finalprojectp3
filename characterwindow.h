@@ -40,6 +40,12 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_sc2_unlock_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_sc2_selectbut_clicked();
+
 private:
     Ui::characterwindow *ui;
     vector<player>* players;

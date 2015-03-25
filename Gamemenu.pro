@@ -28,7 +28,10 @@ SOURCES += main.cpp\
     shop.cpp \
     account.cpp \
     explore.cpp \
-    characterwindow.cpp
+    characterwindow.cpp \
+    check.cpp \
+    balancecheck.cpp \
+    gamecheck.cpp
 
 HEADERS  += mainwindow.h \
     login.h \
@@ -46,7 +49,10 @@ HEADERS  += mainwindow.h \
     shop.h \
     account.h \
     explore.h \
-    characterwindow.h
+    characterwindow.h \
+    check.h \
+    balancecheck.h \
+    gamecheck.h
 
 FORMS    += mainwindow.ui \
     createplayer.ui \

@@ -26,7 +26,7 @@ account::account(vector<player>* p,QWidget *parent) :
     QString name = QString::fromStdString(players->at(0).getName()) + " " + QString::fromStdString(players->at(0).getLastname());
     QString username = QString::fromStdString(players->at(0).getUsername());
     QString email = QString::fromStdString(players->at(0).getEmail());
-    int balancestuff = players->at(0).getBalance();
+    double balancestuff = players->at(0).getBalance();
     ui->name_label->setText(name);
     ui->username_label->setText(username);
     ui->email_label->setText(email);

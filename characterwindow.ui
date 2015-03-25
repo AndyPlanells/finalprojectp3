@@ -151,10 +151,10 @@
     <widget class="QLabel" name="race_label">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>130</y>
-       <width>141</width>
-       <height>171</height>
+       <x>300</x>
+       <y>120</y>
+       <width>191</width>
+       <height>221</height>
       </rect>
      </property>
      <property name="text">
@@ -445,10 +445,10 @@
     <widget class="QLabel" name="type_label">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>150</y>
-       <width>161</width>
-       <height>171</height>
+       <x>300</x>
+       <y>110</y>
+       <width>201</width>
+       <height>211</height>
       </rect>
      </property>
      <property name="text">
@@ -492,7 +492,7 @@
     <attribute name="title">
      <string>Starcraft II</string>
     </attribute>
-    <widget class="QComboBox" name="hs_chars_2">
+    <widget class="QComboBox" name="sc2_chars">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -521,7 +521,7 @@
       <string>update</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="hs_selectbut_2">
+    <widget class="QPushButton" name="sc2_selectbut">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -535,6 +535,92 @@
      </property>
      <property name="text">
       <string>Select Card</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="sc2_name">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>140</y>
+       <width>181</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_36">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>120</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="sc2_story">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>120</y>
+       <width>241</width>
+       <height>211</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_37">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>0</y>
+       <width>221</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="Resources.qrc">:/sc2logo.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sc2_label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>181</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+     <property name="margin">
+      <number>0</number>
      </property>
     </widget>
    </widget>
@@ -664,10 +750,10 @@
     <widget class="QLabel" name="hs_label">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>120</y>
-       <width>141</width>
-       <height>211</height>
+       <x>310</x>
+       <y>110</y>
+       <width>151</width>
+       <height>231</height>
       </rect>
      </property>
      <property name="text">

@@ -38,7 +38,7 @@ void createplayer::on_pushButton_clicked()
     string email = ui->email_label->text().toStdString();
     int VisaCard = ui->creditcard_label->text().toInt();
     int VisaCode = ui->cardno_label->text().toInt();
-    int balance = ui->balance_label->text().toInt();
+    double balance = ui->balance_label->text().toDouble();
     wow mywow;
     d3 myd3;
     sc2 mysc2;

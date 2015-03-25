@@ -46,12 +46,9 @@ void shop::on_buy_button_clicked()
             if(players->at(0).getBalance()>=15){
                 gtime+=30;
                 players->at(0).setBalance(players->at(0).getBalance()-15);
-                ui->transactions_edit->append("Bought Item: 30 days Gametime'\nGame: World of Warcraft\nBalance spent: 15\n- - - - -\n");
-                QString tochange = ui->total_edit->text();
-                int count = tochange.toInt();
-                count+=15;
-                tochange = QString::number(count);
-                ui->total_edit->setText(tochange);
+                players->at(0).setMychecks(players->at(0).getMychecks()+1);
+                players->at(0).setbcheck(balancecheck("30 days gametime",players->at(0).getMychecks(),15));
+                players->at(0).setTimesbalance(players->at(0).getTimesbalance()+1);
             }else{
                  QMessageBox::information(this,"Warning","Not enough balance!  ");
             }
@@ -59,12 +56,6 @@ void shop::on_buy_button_clicked()
             if(players->at(0).getBalance()>=30){
                 gtime+=90;
                 players->at(0).setBalance(players->at(0).getBalance()-30);
-                ui->transactions_edit->append("Bought Item: 90 days Gametime\nGame: World of Warcraft\nBalance spent: 30\n- - - - -\n");
-                QString tochange = ui->total_edit->text();
-                int count = tochange.toInt();
-                count+=30;
-                tochange = QString::number(count);
-                ui->total_edit->setText(tochange);
             }else{
                  QMessageBox::information(this,"Warning","Not enough balance!  ");
             }
@@ -72,12 +63,6 @@ void shop::on_buy_button_clicked()
             if(players->at(0).getBalance()>=60){
                 gtime+=120;
                 players->at(0).setBalance(players->at(0).getBalance()-60);
-                ui->transactions_edit->append("Bought Item: 120 days Gametime\nGame: World of Warcraft\nBalance spent: 60\n- - - - -\n");
-                QString tochange = ui->total_edit->text();
-                int count = tochange.toInt();
-                count+=60;
-                tochange = QString::number(count);
-                ui->total_edit->setText(tochange);
             }else{
                  QMessageBox::information(this,"Warning","Not enough balance!  ");
             }
@@ -100,12 +85,7 @@ void shop::on_tbc_button_clicked()
                 players->at(0).setBalance(players->at(0).getBalance()-20);
                 int gtime = players->at(0).getMyWoW().getGametime();
                 players->at(0).setMyWoW(wow(true,"World of Warcraft",gtime,true,true,false,false,false,false));
-                ui->transactions_edit->append("Bought Item: Expansion 'The Burning Crusade'\nGame: World of Warcraft\nBalance spent: 20\n- - - - -\n");
-                QString tochange = ui->total_edit->text();
-                int count = tochange.toInt();
-                count+=20;
-                tochange = QString::number(count);
-                ui->total_edit->setText(tochange);
+
                 QMessageBox::information(this,"The Burning Crusade","Succesfully bought!");
             }else{
                 QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -127,12 +107,7 @@ void shop::on_wow_base_clicked()
         if(players->at(0).getBalance()>=40){
             players->at(0).setBalance(players->at(0).getBalance()-40);
             players->at(0).setMyWoW(wow(true,"World of Warcraft",0,true,false,false,false,false,false));
-            ui->transactions_edit->append("Bought Item: Base Game\nGame: World of Warcraft\nBalance spent: 40\n- - - - -\n");
-            QString tochange = ui->total_edit->text();
-            int count = tochange.toInt();
-            count+=40;
-            tochange = QString::number(count);
-            ui->total_edit->setText(tochange);
+
             QMessageBox::information(this,"World of Warcraft","Succesfully bought!");
         }else{
             QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -151,12 +126,7 @@ void shop::on_wotlk_button_clicked()
                     players->at(0).setBalance(players->at(0).getBalance()-20);
                     int gtime = players->at(0).getMyWoW().getGametime();
                     players->at(0).setMyWoW(wow(true,"World of Warcraft",gtime,true,true,true,false,false,false));
-                    ui->transactions_edit->append("Bought Item: Expansion 'Wrath of the Lich King'\nGame: World of Warcraft\nBalance spent: 20\n- - - - -\n");
-                    QString tochange = ui->total_edit->text();
-                    int count = tochange.toInt();
-                    count+=20;
-                    tochange = QString::number(count);
-                    ui->total_edit->setText(tochange);
+
                     QMessageBox::information(this,"Wrath of the Lich King","Succesfully bought!");
                 }else{
                     QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -182,12 +152,7 @@ void shop::on_cata_button_clicked()
                     players->at(0).setBalance(players->at(0).getBalance()-20);
                     int gtime = players->at(0).getMyWoW().getGametime();
                     players->at(0).setMyWoW(wow(true,"World of Warcraft",gtime,true,true,true,true,false,false));
-                    ui->transactions_edit->append("Bought Item: Expansion 'Cataclysm'\nGame: World of Warcraft\nBalance spent: 20\n- - - - -\n");
-                    QString tochange = ui->total_edit->text();
-                    int count = tochange.toInt();
-                    count+=20;
-                    tochange = QString::number(count);
-                    ui->total_edit->setText(tochange);
+
                     QMessageBox::information(this,"Cataclysm","Succesfully bought!");
                 }else{
                     QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -213,12 +178,7 @@ void shop::on_mop_button_clicked()
                     players->at(0).setBalance(players->at(0).getBalance()-20);
                     int gtime = players->at(0).getMyWoW().getGametime();
                     players->at(0).setMyWoW(wow(true,"World of Warcraft",gtime,true,true,true,true,true,false));
-                    ui->transactions_edit->append("Bought Item: Expansion 'Mists of Pandaria'\nGame: World of Warcraft\nBalance spent: 20\n- - - - -\n");
-                    QString tochange = ui->total_edit->text();
-                    int count = tochange.toInt();
-                    count+=20;
-                    tochange = QString::number(count);
-                    ui->total_edit->setText(tochange);
+
                     QMessageBox::information(this,"Mist of Pandaria","Succesfully bought!");
                 }else{
                     QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -244,12 +204,7 @@ void shop::on_wod_button_clicked()
                     players->at(0).setBalance(players->at(0).getBalance()-20);
                     int gtime = players->at(0).getMyWoW().getGametime();
                     players->at(0).setMyWoW(wow(true,"World of Warcraft",gtime,true,true,true,true,true,true));
-                    ui->transactions_edit->append("Bought Item: Expansion 'Warlords of Draenor'\nGame: World of Warcraft\nBalance spent: 20\n- - - - -\n");
-                    QString tochange = ui->total_edit->text();
-                    int count = tochange.toInt();
-                    count+=20;
-                    tochange = QString::number(count);
-                    ui->total_edit->setText(tochange);
+
                     QMessageBox::information(this,"Warlords of Draenor","Succesfully bought!");
                 }else{
                     QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -272,12 +227,7 @@ void shop::on_d3_base_clicked()
         if(players->at(0).getBalance()>=40){
             players->at(0).setBalance(players->at(0).getBalance()-40);
             players->at(0).setMyd3(d3(true,"Diablo III",false));
-            ui->transactions_edit->append("Bought Item: Base Game\nGame: Diablo III\nBalance spent: 40\n- - - - -\n");
-            QString tochange = ui->total_edit->text();
-            int count = tochange.toInt();
-            count+=40;
-            tochange = QString::number(count);
-            ui->total_edit->setText(tochange);
+
             QMessageBox::information(this,"Diablo III","Succesfully bought!");
         }else{
             QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -294,12 +244,7 @@ void shop::on_buy_ros_clicked()
             if(players->at(0).getBalance()>=40){
                 players->at(0).setBalance(players->at(0).getBalance()-40);
                 players->at(0).setMyd3(d3(true,"Diablo III",true));
-                ui->transactions_edit->append("Bought Item: Expansion 'Reaper of Souls'\nGame: Diablo III\nBalance spent: 40\n- - - - -\n");
-                QString tochange = ui->total_edit->text();
-                int count = tochange.toInt();
-                count+=40;
-                tochange = QString::number(count);
-                ui->total_edit->setText(tochange);
+
                 QMessageBox::information(this,"The Reaper of Souls","Succesfully bought!");
             }else{
                 QMessageBox::information(this,"Warning","Not enough balance!");
@@ -319,12 +264,7 @@ void shop::on_sc3_base_clicked()
         if(players->at(0).getBalance()>=40){
             players->at(0).setBalance(players->at(0).getBalance()-40);
             players->at(0).setMySc2(sc2(true,"Starcraft II",false,false));
-            ui->transactions_edit->append("Bought Item: Base Game\nGame: Starcraft II\nBalance spent: 40\n- - - - -\n");
-            QString tochange = ui->total_edit->text();
-            int count = tochange.toInt();
-            count+=40;
-            tochange = QString::number(count);
-            ui->total_edit->setText(tochange);
+
             QMessageBox::information(this,"Diablo III","Succesfully bought!");
         }else{
             QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -341,12 +281,7 @@ void shop::on_buy_wol_clicked()
             if(players->at(0).getBalance()>=40){
                 players->at(0).setBalance(players->at(0).getBalance()-40);
                 players->at(0).setMySc2(sc2(true,"Starcraft II",true,false));
-                ui->transactions_edit->append("Bought Item: Expansion 'Wings of Liberty'\nGame: Starcraft II\nBalance spent: 40\n- - - - -\n");
-                QString tochange = ui->total_edit->text();
-                int count = tochange.toInt();
-                count+=40;
-                tochange = QString::number(count);
-                ui->total_edit->setText(tochange);
+
                 QMessageBox::information(this,"Wings of Liberty","Succesfully bought!");
             }else{
                 QMessageBox::information(this,"Warning","Not enough balance!");
@@ -367,12 +302,7 @@ void shop::on_buy_hts_clicked()
                 if(players->at(0).getBalance()>=40){
                     players->at(0).setBalance(players->at(0).getBalance()-40);
                     players->at(0).setMySc2(sc2(true,"Starcraft",true,true));
-                    ui->transactions_edit->append("Bought Item: Expansion 'Heart of the Swarm'\nGame: Starcraft II\nBalance spent: 40\n- - - - -\n");
-                    QString tochange = ui->total_edit->text();
-                    int count = tochange.toInt();
-                    count+=40;
-                    tochange = QString::number(count);
-                    ui->total_edit->setText(tochange);
+
                     QMessageBox::information(this,"Heart of the Swarm","Succesfully bought!");
                 }else{
                     QMessageBox::information(this,"Warning","Not enough balance!  ");
@@ -392,7 +322,6 @@ void shop::on_hs_base_clicked()
         QMessageBox::information(this,"Warning","You already have this game.");
     }else{
         players->at(0).setMyHs(Hs(true,"Hearthstone",false));
-        ui->transactions_edit->append("Bought Item: Base Game\nGame: Hearthstone\nBalance spent: 0\n- - - - -\n");
         QMessageBox::information(this,"Hearthstone","Succesfully Acquired!");
     }
 }
@@ -406,12 +335,7 @@ void shop::on_buy_nax_clicked()
             if(players->at(0).getBalance()>=10){
                 players->at(0).setBalance(players->at(0).getBalance()-10);
                 players->at(0).setMyHs(Hs(true,"Hearthstone",true));
-                ui->transactions_edit->append("Bought Item: Expansion 'The Curse of Naxxramas'\nGame: Hearthstone\nBalance spent: 10\n- - - - -\n");
-                QString tochange = ui->total_edit->text();
-                int count = tochange.toInt();
-                count+=10;
-                tochange = QString::number(count);
-                ui->total_edit->setText(tochange);
+
                 QMessageBox::information(this,"Curse of Naxxramas","Succesfully bought!");
             }else{
                 QMessageBox::information(this,"Warning","Not enough balance!");
@@ -440,3 +364,12 @@ void shop::on_pushButton_clicked()
     }
 }
 
+
+void shop::on_pushButton_2_clicked()
+{
+    ui->tst_t->model()->removeRows(0,100);
+    int size1 = players->at(0).getMybcheck().size();
+    int size2 = players->at(0).getMygcheck().size();
+    ui->tst_t->setRowCount(size1+size2);
+    ui->tst_t->setItem(0,0,new QTableWidgetItem("Hello"));
+}
