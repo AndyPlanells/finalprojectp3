@@ -667,7 +667,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Finalize</string>
+      <string>Update</string>
      </property>
     </widget>
     <widget class="QTableWidget" name="tst_t">

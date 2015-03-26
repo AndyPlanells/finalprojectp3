@@ -376,7 +376,7 @@ void shop::on_buy_nax_clicked()
         }else{
             if(players->at(0).getBalance()>=10){
                 players->at(0).setBalance(players->at(0).getBalance()-10);
-                players->at(0).setgcheck(gamecheck("D3",players->at(0).getMychecks(),10));
+                players->at(0).setgcheck(gamecheck("HSFP",players->at(0).getMychecks(),10));
                 players->at(0).setMychecks(players->at(0).getMychecks()+1);
                 players->at(0).setTimesgames(players->at(0).getTimesgames()+0);
                 players->at(0).setMyHs(Hs(true,"Hearthstone",true));

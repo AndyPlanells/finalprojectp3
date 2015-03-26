@@ -31,8 +31,7 @@ SOURCES += main.cpp\
     characterwindow.cpp \
     check.cpp \
     balancecheck.cpp \
-    gamecheck.cpp \
-    signin.cpp
+    gamecheck.cpp
 
 HEADERS  += mainwindow.h \
     player.h \
@@ -52,16 +51,14 @@ HEADERS  += mainwindow.h \
     characterwindow.h \
     check.h \
     balancecheck.h \
-    gamecheck.h \
-    signin.h
+    gamecheck.h
 
 FORMS    += mainwindow.ui \
     createplayer.ui \
     shop.ui \
     account.ui \
     explore.ui \
-    characterwindow.ui \
-    signin.ui
+    characterwindow.ui
 
 RESOURCES += \
     Resources.qrc

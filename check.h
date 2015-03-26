@@ -11,7 +11,7 @@ class check
     string boughtitem;
     int nocheck;
 public:
-    check(string,int);
+    check(string="",int=0);
     virtual string toString()const=0;
     virtual double getTax()=0;
     virtual double getDiscount(int)=0;

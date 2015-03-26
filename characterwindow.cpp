@@ -314,7 +314,7 @@ void characterwindow::on_sc2_unlock_clicked()
         if(ifexist){
             QMessageBox::information(this,"Starcraft II","You have already unlocked this unit.");
         }else{
-            shochar a("Protoss","Starcraft II","Yada yada");
+            shochar a("Protoss","Starcraft II","Now new tactics and technologies are being brought to bear in the increasingly desperate battle against the zerg, and ancient, terrible weapons the protoss set aside long ago are being unleashed. The protoss have never been a prolific people and have traditionally bolstered their numbers with a variety of robotic war machines. Individual protoss warriors are unsurpassed in their skills, greatly enhanced by the combination of technology and formidable psionic strength. Nonetheless, the protoss must rely on mobility and surprise to maximize their advantages without getting drawn into a battle of attrition. One of their greatest strengths lies in their fleet, which boasts a variety of ships powerful enough to pound an enemy to atoms.");
             players->at(0).setsc2char(a);
             QMessageBox::information(this,"Unlock","Succesfully unlocked Protoss unit!");
         }
@@ -330,7 +330,7 @@ void characterwindow::on_sc2_unlock_clicked()
         if(ifexist){
             QMessageBox::information(this,"Starcraft II","You have already unlocked this unit.");
         }else{
-            shochar a("Terran","Starcraft II","Yada yada");
+            shochar a("Terran","Starcraft II","Forced to adapt to the harsh existence on the mostly lifeless worlds of the sector, the terrans are masters of survival. With neither the advanced technology of the protoss nor the natural prowess of the zerg to rely on, the terran military forces consist of a varied mix of units. From basic but effective infantry like the Marines to heavily armed battlecruisers, terran units rely on solid armor, plentiful firepower, and strength in numbers to hold the line. Terrans excel in defensive situations where their bunkers and Siege Tanks really shine.");
             players->at(0).setsc2char(a);
             QMessageBox::information(this,"Unlock","Succesfully unlocked Terran unit!");
         }
@@ -346,7 +346,7 @@ void characterwindow::on_sc2_unlock_clicked()
         if(ifexist){
             QMessageBox::information(this,"Starcraft II","You have already unlocked this unit.");
         }else{
-            shochar a("Zerg","Starcraft II","Yada yada");
+            shochar a("Zerg","Starcraft II","The zerg are entirely unlike the terrans and the protoss. They are composed of many different species that were integrated into the Swarm via zerg infestation. Such creatures are rapidly and selectively evolved into ruthless killing machines to further the driving zerg imperative of achieving absolute domination. The zerg make no use of technology to create their weapons, armor, or starships. Instead, these functions are efficiently fulfilled through biological adaptation and planned mutation of zerg strains. Even zerg structures are in fact specialized organs within the living, growing organism of a zerg nest");
             players->at(0).setsc2char(a);
             QMessageBox::information(this,"Unlock","Succesfully unlocked Zerg unit!");
         }
