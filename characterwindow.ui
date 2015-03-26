@@ -534,7 +534,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Select Card</string>
+      <string>Select Unit</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="sc2_name">
