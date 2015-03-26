@@ -6,6 +6,7 @@
 #include "shop.h"
 #include "explore.h"
 #include "characterwindow.h"
+#include "login.h"
 #include <QMessageBox>
 #include <iostream>
 #include <string>
@@ -29,9 +30,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_new_button_clicked()
 {
-    createplayer cp(players);
-    cp.setModal(true);
-    cp.exec();
+    login l(players,logplayers);
+    l.setModal(true);
+    l.exec();
 }
 
 void MainWindow::on_account_button_clicked()
