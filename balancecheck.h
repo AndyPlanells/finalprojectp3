@@ -8,13 +8,13 @@ using std::string;
 
 class balancecheck : public check
 {
-    int money;
+    double money;
 public:
-    balancecheck(string,int,int);
+    balancecheck(string,int,double);
     virtual string toString()const;
     virtual double getTax();
     virtual double getDiscount(int);
-    int getMoney()const;
+    double getMoney()const;
 };
 
 #endif // BALANCECHECK_H

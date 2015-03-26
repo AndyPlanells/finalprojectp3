@@ -97,7 +97,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Sign Up</string>
+     <string>Profile</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">

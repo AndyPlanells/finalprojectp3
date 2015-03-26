@@ -7,7 +7,7 @@ using std::string;
 
 using std::stringstream;
 
-balancecheck::balancecheck(string boughtitem, int nocheck, int money):check(boughtitem, nocheck),money(money){
+balancecheck::balancecheck(string boughtitem, int nocheck, double money):check(boughtitem, nocheck),money(money){
 
 }
 
@@ -34,6 +34,6 @@ double balancecheck::getDiscount(int timesclicked){
     }
 }
 
-int balancecheck::getMoney()const{
+double balancecheck::getMoney()const{
     return money;
 }

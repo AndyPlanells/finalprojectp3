@@ -23,6 +23,10 @@ account::account(vector<player>* p,QWidget *parent) :
     players = p;
     ui->setupUi(this);
 
+    ui->games_text->setPlainText("");
+    ui->games_text_2->setPlainText("");
+    ui->games_text_3->setPlainText("");
+    ui->games_text_4->setPlainText("");
     QString name = QString::fromStdString(players->at(0).getName()) + " " + QString::fromStdString(players->at(0).getLastname());
     QString username = QString::fromStdString(players->at(0).getUsername());
     QString email = QString::fromStdString(players->at(0).getEmail());

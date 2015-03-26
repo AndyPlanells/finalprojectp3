@@ -397,6 +397,9 @@ void shop::on_pushButton_clicked()
     QString codes = QString::number(codey);
     if(ui->code_label->text()==codes){
         double newbalance = ui->spin_balance->value();
+        players->at(0).setbcheck(balancecheck("D3",players->at(0).getMychecks(),newbalance));
+        players->at(0).setMychecks(players->at(0).getMychecks()+1);
+        players->at(0).setTimesbalance(players->at(0).getTimesbalance()+0);
         newbalance+=players->at(0).getBalance();
         players->at(0).setBalance(newbalance);
         QMessageBox::information(this,"Balance","Succesfully added new Balance to your account.");
@@ -413,9 +416,10 @@ void shop::on_pushButton_clicked()
 void shop::on_pushButton_2_clicked()
 {
     ui->tst_t->model()->removeRows(0,100);
+    ui->tst_b->model()->removeRows(0,100);
     int size1 = players->at(0).getMygcheck().size();
     int size2 = players->at(0).getMybcheck().size();
-    ui->tst_t->setRowCount(size1+size2);
+    ui->tst_t->setRowCount(size1);
     int timesg = players->at(0).getTimesgames();
     QString checkno, item, cost, tax, discount,total;
     for(int i=0;i<size1;i++){
@@ -434,6 +438,28 @@ void shop::on_pushButton_2_clicked()
         ui->tst_t->setItem(i,3,new QTableWidgetItem(tax));
         ui->tst_t->setItem(i,4,new QTableWidgetItem(discount));
         ui->tst_t->setItem(i,5,new QTableWidgetItem(total));
+        timesg--;
     }
     players->at(0).setTimesgames(0);
+
+    ui->tst_b->setRowCount(size2);
+    int timesb = players->at(0).getTimesbalance();
+    for(int i=0;i<size2;i++){
+        checkno =  QString::number(players->at(0).getMybcheck().at(i).getNocheck());
+        cost = QString::number(players->at(0).getMybcheck().at(i).getMoney());
+        tax = QString::number(players->at(0).getMybcheck().at(i).getTax());
+        discount = QString::number(players->at(0).getMybcheck().at(i).getDiscount(timesb));
+        double balancetotal = players->at(0).getMybcheck().at(i).getMoney();
+        double taxtotal = players->at(0).getMybcheck().at(i).getTax();
+        double discounttotal = players->at(0).getMygcheck().at(i).getDiscount(timesg);
+        total = QString::number(balancetotal+(taxtotal*balancetotal)-(balancetotal*discounttotal));
+        ui->tst_b->setItem(i,0,new QTableWidgetItem(checkno));
+        ui->tst_b->setItem(i,1,new QTableWidgetItem(cost));
+        ui->tst_b->setItem(i,2,new QTableWidgetItem(tax));
+        ui->tst_b->setItem(i,3,new QTableWidgetItem(discount));
+        ui->tst_b->setItem(i,4,new QTableWidgetItem(total));
+        timesg--;
+    }
+    players->at(0).setTimesbalance(0);
 }
+

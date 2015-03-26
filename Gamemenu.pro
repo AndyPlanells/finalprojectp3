@@ -31,10 +31,10 @@ SOURCES += main.cpp\
     characterwindow.cpp \
     check.cpp \
     balancecheck.cpp \
-    gamecheck.cpp
+    gamecheck.cpp \
+    signin.cpp
 
 HEADERS  += mainwindow.h \
-    login.h \
     player.h \
     games.h \
     wow.h \
@@ -52,14 +52,16 @@ HEADERS  += mainwindow.h \
     characterwindow.h \
     check.h \
     balancecheck.h \
-    gamecheck.h
+    gamecheck.h \
+    signin.h
 
 FORMS    += mainwindow.ui \
     createplayer.ui \
     shop.ui \
     account.ui \
     explore.ui \
-    characterwindow.ui
+    characterwindow.ui \
+    signin.ui
 
 RESOURCES += \
     Resources.qrc

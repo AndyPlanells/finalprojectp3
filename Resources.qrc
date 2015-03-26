@@ -52,5 +52,17 @@
         <file>terrantwo.jpg</file>
         <file>zergone.jpg</file>
         <file>zergtwo.jpg</file>
+        <file>cata.txt</file>
+        <file>classic.txt</file>
+        <file>d3.txt</file>
+        <file>hs.txt</file>
+        <file>hts.txt</file>
+        <file>mop.txt</file>
+        <file>ros.txt</file>
+        <file>sc2.txt</file>
+        <file>tbc.txt</file>
+        <file>wod.txt</file>
+        <file>wol.txt</file>
+        <file>wotlk.txt</file>
     </qresource>
 </RCC>

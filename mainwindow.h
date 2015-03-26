@@ -33,6 +33,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     vector<player>* players;
+    vector<player>* logplayers;
 };
 
 #endif // MAINWINDOW_H
